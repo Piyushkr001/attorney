@@ -9,5 +9,22 @@
     "Contact": "Contact",
     "About": "About",
     "Services": "Services"
+  },
+
+  "Footer": {
+    "Copyright": "© 2024 Mediciio Medtech Pvt. Ltd. All rights reserved.",
+    "About": "About",
+    "Services": "Services",
+    "Join": "Join the Health Community.",
+    "Trust": "Worthy of reliance and trust for patients. Join us for comprehensive healthcare support.",
+    "Need": "Need Help?",
+    "Home": "Home",
+    "Contact": "Contact Us",
+    "Terms": "Terms and Conditions",
+    "Privacy": "Privacy Policy",
+    "Get": "Get in Touch",
+    "Address": "Railvihar Colony, D14, Manoharpur Road, Uttar Pradesh - 244001",
+    "N1": "+916398072914",
+    "N2": "+919608541625"
   }
 }

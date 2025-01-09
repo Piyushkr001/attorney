@@ -44,7 +44,7 @@ export const Navbar = () => {
             <div className="flex items-center">
               <Link href={"/"}>
                 <Image
-                  src="/images/logos/Mediciio_Logo.png"
+                  src="/images/logo/Attorney.png"
                   alt="Mediciio Desktop Logo"
                   className="hidden lg:block  mr-2"
                   width={"59"}
@@ -52,7 +52,7 @@ export const Navbar = () => {
                 />
                 {/* Mobile Logo */}
                 <Image
-                  src="/images/logos/Mediciio_Logo.png"
+                  src="/images/logo/Attorney.png"
                   alt="Mediciio Mobile Logo"
                   className="block lg:hidden min-h-8 mr-2"
                   width="60"
