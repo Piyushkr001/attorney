@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"; // Shadcn Card Component
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"; // Shadcn Card Component
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import Link from 'next/link'; // Import the Link component
+import { Button } from "../ui/button";
 
 export default function ComplimentaryServices() {
   const services = [
@@ -78,24 +79,29 @@ export default function ComplimentaryServices() {
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <Link href={service.link} passHref>
-                <Card className="max-w-sm p-4 shadow-md hover:shadow-lg transition-shadow mx-auto cursor-pointer">
-                  <CardHeader className="flex flex-col items-center">
-                    <img
-                      src={service.icon}
-                      alt={service.title}
-                      className="w-12 h-12 mb-4"
-                      loading="lazy" // Add lazy loading for better performance
-                    />
-                    <CardTitle className="text-lg font-bold">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm text-gray-600 mt-2">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
+              <Card className="max-w-sm p-4 shadow-md hover:shadow-lg transition-shadow mx-auto">
+                <CardHeader className="flex flex-col items-center">
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className="w-12 h-12 mb-4"
+                    loading="lazy" // Add lazy loading for better performance
+                  />
+                  <CardTitle className="text-lg font-bold">{service.title}</CardTitle>
+                  <CardDescription className="text-sm text-gray-600 mt-2">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex justify-center mt-4">
+                  {/* More Button */}
+                  <Link
+                    href={service.link}
+                    
+                  >
+                    <Button variant="outline">More</Button>
+                  </Link>
+                </CardFooter>
+              </Card>
             </SwiperSlide>
           ))}
         </Swiper>

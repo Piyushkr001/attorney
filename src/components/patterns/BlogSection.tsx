@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "../ui/button";
 
 const BlogSection = () => {
   const blogs = [
@@ -95,8 +96,8 @@ const BlogSection = () => {
                 <CardFooter className="flex justify-between items-center text-sm text-gray-500">
                   <span>{blog.date}</span>
                   {/* Read More Button */}
-                  <Link href={blog.link}>
-                    <a className="text-blue-600 hover:underline">Read More</a>
+                  <Link href={blog.link} className="text-gray-700">
+                    <Button variant="outline">Read More</Button>
                   </Link>
                 </CardFooter>
               </Card>
