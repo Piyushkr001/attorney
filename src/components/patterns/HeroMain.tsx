@@ -6,13 +6,13 @@ import { Icon } from "../ui/icon";
 
 export default function HeroSection() {
   return (
-    <section className="bg-black text-white py-16 lg:py-20">
+    <section className="bg-gradient-to-br from-gray-950 to-zinc-700 text-white py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left Section: Image */}
           <div className="lg:w-1/2 flex justify-center lg:justify-start mt-20 mb-8 lg:mb-0">
-            <div className="bg-yellow-300 p-4 rounded-lg">
+            <div className="bg-gradient-to-br from-sky-400 to-blue-600 p-4 rounded-lg">
               <img
                 src="/images/HeroImage.webp" // Replace with your image
                 alt="Lawyer interacting with a client"
