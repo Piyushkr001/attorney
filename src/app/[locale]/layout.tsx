@@ -10,6 +10,9 @@ import { Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import TanstackProviders from "../provider/TanstackProvider";
+import {
+  ClerkProvider
+} from '@clerk/nextjs'
 
 const nunito = Nunito({
   subsets: ["latin", "latin-ext"],
@@ -87,24 +90,26 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang="en">
-      {/* <GoogleTagManager gtmId="GTM-TQWBN5WH" /> */}
-      <body className={`${nunito.className} antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <TanstackProviders>
-            <>
-              <Navbar/>
-              <div
-                id="wrapper"
-                className="fixed top-0 right-0 bottom-0 left-0 overflow-auto flex flex-col justify-between bg-[#F6F7F9]"
-              >
-                <main>{children}</main>
-                <TranslatedFooter />
-              </div>
-            </>
-          </TanstackProviders>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        {/* <GoogleTagManager gtmId="GTM-TQWBN5WH" /> */}
+        <body className={`${nunito.className} antialiased`}>
+          <NextIntlClientProvider messages={messages}>
+            <TanstackProviders>
+              <>
+                <Navbar />
+                <div
+                  id="wrapper"
+                  className="fixed top-0 right-0 bottom-0 left-0 overflow-auto flex flex-col justify-between bg-[#F6F7F9]"
+                >
+                  <main>{children}</main>
+                  <TranslatedFooter />
+                </div>
+              </>
+            </TanstackProviders>
+          </NextIntlClientProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

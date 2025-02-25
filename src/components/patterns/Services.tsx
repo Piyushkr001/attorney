@@ -88,7 +88,7 @@ export default function ComplimentaryServices() {
                     loading="lazy" // Add lazy loading for better performance
                   />
                   <CardTitle className="text-lg font-bold">{service.title}</CardTitle>
-                  <CardDescription className="text-sm text-gray-600 mt-2">
+                  <CardDescription className="text-sm text-gray-600 line-clamp-3 mt-2">
                     {service.description}
                   </CardDescription>
                 </CardHeader>

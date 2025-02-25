@@ -12,10 +12,11 @@ import { useTranslations } from "next-intl";
 
 import { Icon } from "../ui/icon";
 import LocaleSwitcher from "./locale/LocaleSwitcher";
-// import StickyNavbar from "react-sticky-navbar";
+import { UserButton, useUser } from "@clerk/nextjs"; // Import useUser
 
 export const Navbar = () => {
   const t = useTranslations("Navbar");
+  const { isSignedIn } = useUser(); // Get the authentication status
 
   const navigationItems = [
     { title: t("Home"), href: "/" },
@@ -38,7 +39,7 @@ export const Navbar = () => {
         zIndex={100}
       >
         {/* <header className="w-full z-40 fixed top-0 left-0 bg-white shadow-md"> */}
-        <div className="w-full z-40 sticky top-0 bg-gradient-to-br from-slate-100 to-zinc-400 shadow-md rounded-lg">
+        <div className="w-full z-40 sticky top-0 bg-gradient-to-br from-slate-100 via-slate-500 to-zinc-700 shadow-md rounded-lg">
           <div className="container mx-auto flex items-center justify-between px-4 py-2">
             {/* Logo */}
             <div className="flex items-center">
@@ -46,7 +47,7 @@ export const Navbar = () => {
                 <Image
                   src="/images/logo/Attorney.png"
                   alt="Mediciio Desktop Logo"
-                  className="hidden lg:block  mr-2"
+                  className="hidden lg:block mr-2"
                   width={"59"}
                   height={"59"}
                 />
@@ -59,8 +60,7 @@ export const Navbar = () => {
                   height="60"
                 />
               </Link>
-              {/* <span className="text-lg font-bold text-red-500">Care</span>
-          <span className="text-lg font-bold text-gray-800">Medico</span> */}
+              
             </div>
 
             {/* Navigation Links */}
@@ -79,32 +79,33 @@ export const Navbar = () => {
             {/* Social Icons */}
             <div className="hidden lg:flex space-x-4 items-center">
               <LocaleSwitcher />
-              <Link
-                href="https://www.facebook.com"
-                target="_blank"
-              >
+              <Link href="https://www.facebook.com" target="_blank">
                 <Icon
                   provider="lucide"
                   name="Facebook"
                   className="w-5 h-5 text-gray-900 hover:text-gray-800"
                 />
               </Link>
-              <Link
-                href="https://www.instagram.com"
-                target="_blank"
-              >
+              <Link href="https://www.instagram.com" target="_blank">
                 <Icon
                   provider="lucide"
                   name="Instagram"
                   className="w-5 h-5 text-gray-900 hover:text-gray-800"
                 />
               </Link>
-              <Button variant="outline" asChild>
-                <Link href="/en/login">Login</Link>
-              </Button>
-              <Button variant="default" asChild>
-                <Link href="/en/signup">Sign Up</Link>
-              </Button>
+              {/* Render UserButton if the user is signed in */}
+              {isSignedIn ? (
+                <UserButton />
+              ) : (
+                <>
+                  <Button variant="outline" asChild>
+                    <Link href="/en/sign-in">Login</Link>
+                  </Button>
+                  <Button variant="default" asChild>
+                    <Link href="/en/sign-up">Sign Up</Link>
+                  </Button>
+                </>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -132,20 +133,14 @@ export const Navbar = () => {
                 </AppLink>
               ))}
               <div className="flex space-x-4 mt-4">
-                <Link
-                  href="https://www.facebook.com"
-                  target="_blank"
-                >
+                <Link href="https://www.facebook.com" target="_blank">
                   <Icon
                     provider="lucide"
                     name="Facebook"
                     className="w-5 h-5 text-gray-900 hover:text-gray-800"
                   />
                 </Link>
-                <Link
-                  href="https://www.instagram.com"
-                  target="_blank"
-                >
+                <Link href="https://www.instagram.com" target="_blank">
                   <Icon
                     provider="lucide"
                     name="Instagram"
@@ -154,12 +149,18 @@ export const Navbar = () => {
                 </Link>
               </div>
               <div className="flex flex-col mt-4 space-y-2">
-                <Button variant="outline" asChild>
-                  <Link href="/en/login">Login</Link>
-                </Button>
-                <Button variant="default" asChild>
-                  <Link href="/en/signup">Sign Up</Link>
-                </Button>
+                {isSignedIn ? (
+                  <UserButton />
+                ) : (
+                  <>
+                    <Button variant="outline" asChild>
+                      <Link href="/en/sign-in">Login</Link>
+                    </Button>
+                    <Button variant="default" asChild>
+                      <Link href="/en/sign-up">Sign Up</Link>
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           )}

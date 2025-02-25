@@ -36,13 +36,69 @@ const BlogSection = () => {
       image: "/images/passionate-love.png",
       link: "/blog/passionate-love-life-2025", // Link to the respective content page
     },
+    {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
+      {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
+      {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
+      {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
+      {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
+      {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
+      {
+        title: "4 Zodiac Signs Destined for a Passionate Love Life in 2025",
+        author: "Jyoti",
+        views: 274,
+        date: "January 12, 2025",
+        image: "/images/passionate-love.png",
+        link: "/blog/passionate-love-life-2025", // Link to the respective content page
+      },
   ];
 
   return (
     <section className="bg-gray-100 py-10">
       <div className="container mx-auto">
         {/* Stats Section */}
-        <div className="flex justify-between items-center bg-gradient-to-r from-cyan-400 to-sky-600 text-white py-6 px-4 rounded-lg mb-8">
+        <div className="flex justify-between items-center bg-gradient-to-r from-cyan-400 via-cyan-600 to-sky-600 text-white py-6 px-4 rounded-lg mb-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold">8,864+</h3>
             <p>Total Lawyers</p>
